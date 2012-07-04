@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:util="http://www.springframework.org/schema/util"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.springframework.org/schema/beans"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd" >
+
+    <!-- This is an example of the beans that need to be defined in the
+         standard jWebSocket SystemPlugIn configuration. The
+         SignUpPlugIn requires the JdbcUserDetailsManager instance,
+         and the list of defaultGroups of which new accounts are members. -->
+        
+	<bean id="jdbcAuthDataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+		<property name="url" value="jdbc:mysql://localhost:3306/db_name"/>
+		<property name="username" value=""/>
+		<property name="password" value=""/>
+	</bean>
+
+	<!-- authentication with groups only, RECOMMENDED for jWebSocket Plug-ins -->
+	<bean id="jdbcAuthUserDetailsService" class="org.springframework.security.provisioning.JdbcUserDetailsManager">
+		<property name="dataSource" ref="jdbcAuthDataSource"/>
+		<property name="enableGroups" value="true"/>
+		<property name="enableAuthorities" value="false"/>
+	</bean>	
+
+    <!-- The default groups that new accounts should be members of. -->	
+    <util:list id="defaultGroups" value-type="java.lang.String">
+        <value>ws_user</value>
+    </util:list>
+	
+</beans>
