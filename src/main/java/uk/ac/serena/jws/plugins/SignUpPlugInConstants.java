@@ -18,10 +18,12 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package uk.ac.serena.ws.plugins;
+package uk.ac.serena.jws.plugins;
 
-final class SignUpPlugInConstants {
-    
+// FIXME: Move to a separate shared library so it can be included both client and server-side.
+
+public final class SignUpPlugInConstants {
+
     /**
      * Sign-up plug-in namespace
      */
@@ -41,11 +43,11 @@ final class SignUpPlugInConstants {
     /**
      * Errors
      */
-    protected static final int ERROR_NO_USERNAME_NOT_PROVIDED = 1;
-    protected static final String ERROR_MSG_USERNAME_NOT_PROVIDED = "Username not provided.";
-    protected static final int ERROR_NO_PASSWORD_NOT_PROVIDED = 2;
-    protected static final String ERROR_MSG_PASSWORD_NOT_PROVIDED = "Password not provided.";
-    protected static final int ERROR_NO_USERNAME_EXISTS = 3;
-    protected static final String ERROR_MSG_USERNAME_EXISTS = "Username already exists.";
+    public static final int ERROR_NO_USERNAME_NOT_PROVIDED = 1;
+    public static final String ERROR_MSG_USERNAME_NOT_PROVIDED = "Username not provided.";
+    public static final int ERROR_NO_PASSWORD_NOT_PROVIDED = 2;
+    public static final String ERROR_MSG_PASSWORD_NOT_PROVIDED = "Password not provided.";
+    public static final int ERROR_NO_USERNAME_EXISTS = 3;
+    public static final String ERROR_MSG_USERNAME_EXISTS = "Username already exists.";
 
 }
