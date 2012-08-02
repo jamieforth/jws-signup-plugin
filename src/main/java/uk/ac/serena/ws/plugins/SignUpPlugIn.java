@@ -44,8 +44,6 @@ import org.springframework.security.provisioning.JdbcUserDetailsManager;
 public class SignUpPlugIn extends TokenPlugIn {
     private static Logger mLog = Logging.getLogger();
 
-    private final static String NS_SIGNUP_PLUGIN = "uk.ac.serena.ws.plugins.signup";
-
     private static ApplicationContext mBeanFactory;
     private JdbcUserDetailsManager userDetailsService;
     private ArrayList<String> defaultGroups;
@@ -57,7 +55,7 @@ public class SignUpPlugIn extends TokenPlugIn {
             mLog.debug("Instantiating signup plug-in...");
 
         // Specify default name space for sample plug-in.
-        this.setNamespace(NS_SIGNUP_PLUGIN);
+        this.setNamespace(SignUpPlugInConstants.NS_SIGNUP_PLUGIN);
 
         try {
             mBeanFactory = JWebSocketBeanFactory.getInstance(); // Assume

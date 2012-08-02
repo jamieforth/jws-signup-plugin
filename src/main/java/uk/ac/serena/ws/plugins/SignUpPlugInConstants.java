@@ -21,6 +21,11 @@
 package uk.ac.serena.ws.plugins;
 
 final class SignUpPlugInConstants {
+    
+    /**
+     * Sign-up plug-in namespace
+     */
+    public final static String NS_SIGNUP_PLUGIN = "uk.ac.serena.ws.plugins.signup";
 
     /**
      * Message types
